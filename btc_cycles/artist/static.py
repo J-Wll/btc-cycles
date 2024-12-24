@@ -7,6 +7,7 @@ import datetime
 from importlib.metadata import version
 from typing import TYPE_CHECKING, Union
 
+import btc_cycles.config as config 
 import matplotlib.colors as mcolors
 import matplotlib.pyplot as plt
 import numpy as np
@@ -206,7 +207,7 @@ class StaticArtist:
         self.axes.set_rlabel_position(0)
 
         # y label
-        self.axes.set_ylabel("Price (USD)", rotation=0)
+        self.axes.set_ylabel(f"Price ({config.currency})", rotation=0)
         self.axes.yaxis.set_label_coords(0.5, 1.01)
 
         # ticks params
@@ -274,8 +275,8 @@ class StaticArtist:
         """add legend and title to plot"""
         legend = self.axes.legend(
             [
-                "BTC/USD",
-                "Today BTC/USD Close",
+                f"{config.token}/{config.currency}",
+                f"Today {config.token}/{config.currency} Close",
                 "Today",
                 "Halving day",
                 "All time high (ATH)",
@@ -294,7 +295,7 @@ class StaticArtist:
 
         # title
         title = self.axes.set_title(
-            "Bitcoin price halving cycles",
+            f"{config.token_name} price centered around BTC cycles",
             fontdict={"fontsize": 15, "fontweight": "bold"},
             pad=20,
         )

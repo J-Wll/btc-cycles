@@ -25,6 +25,10 @@ pip install btc-cycles
 
 ## Usage
 
+  jupyter nbconvert --to notebook --execute --inplace bitcoin.ipynb
+  py -3.12 -m pip install python-dotenv
+
+
 - **Bitcoin price** data is fetched from a set of available sources, such as:
 
   - [`coinmarketcap`](https://www.coinmarketcap.com), requires **paid** `api_key`.

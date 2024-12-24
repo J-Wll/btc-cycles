@@ -7,13 +7,15 @@ from typing import Optional
 import cryptocompare
 import pandas as pd
 from cryptocmd import CmcScraper
+import btc_cycles.config as config 
+
 
 # bitcoin start date is 2009-01-01 (or 2009-01-03)?
 # in any case, as for issue26, the start date returned
 # by historical price services might also change
 # cryptocompare now from 2010-07-17
 # TODO: dynamic start date (?)
-START = dt.datetime(2010, 7, 17)
+START = config.start_date
 
 
 class Source:

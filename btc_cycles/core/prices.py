@@ -7,6 +7,8 @@ import pandas as pd
 from .halvings import Halvings
 from .sources import Source
 
+import btc_cycles.config as config 
+
 
 def _find_ath(dataframe: pd.DataFrame) -> pd.DataFrame:
     """find all-time high
@@ -70,7 +72,7 @@ class Prices:
         halvings (DataFrame): halving data
     """
 
-    coin: str = "BTC"
+    coin: str = config.token
     source: Optional[str] = None
     fiat: Optional[str] = None
     data: Optional[pd.DataFrame] = None

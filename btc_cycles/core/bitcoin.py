@@ -8,6 +8,7 @@ from typing import TYPE_CHECKING, Literal, Union
 from ..artist import Artist
 from .halvings import Halvings, get_halving_data
 from .prices import Prices
+import btc_cycles.config as config 
 
 # TODO: for now its assuming that the
 #  cycle length is the same as previous
@@ -44,7 +45,7 @@ class Bitcoin:
     def __init__(
         self,
         source: str = "coinmarketcap-free",
-        currency: str = "USD",
+        currency: str = config.currency,
         api_key: str = None,
     ):
         # get processed price data
